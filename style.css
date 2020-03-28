@@ -1,0 +1,317 @@
+/* Scene container*/
+
+@font-face {
+    font-family: 'Fruktur', cursive;
+    src: url(href="https://fonts.googleapis.com/css?family=Fruktur&display=swap");
+}
+
+a:hover {
+  color: green;
+}
+
+body {
+  background-color: black ;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+#embeddedScene {
+visibility: visible;
+width: 100%;
+margin-left: 50%;
+margin-right: 50%;
+margin: auto;
+height: 0px; 
+}
+
+#aframeScene {
+  z-index: 2;
+}
+
+a-scene {
+  height: 600px;
+  width: 100%;
+}
+
+
+/* Hide the images by default */
+.myPictures {
+    display: none;
+}
+
+/* Intro scene */
+#cellphoneHeader {
+  display: none;
+}
+
+#video {
+  z-index: 1;
+  margin-top:0px;
+  display: block;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 600px;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin: auto;
+  overflow: auto;
+  /*
+  position: absolute;
+  z-index: 1;
+  top: 1.75%;
+  left: 10%;
+  margin-left: 0px;
+  width: 600px;
+  */
+}
+
+.videoContainer iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  margin-top: 5%;
+  margin-bottom: 0px;
+}
+
+.videoContainer p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-top: 1%;
+  margin-bottom: 50px;
+}
+
+#removeVideoPlayerButton a {
+  text-decoration: none;
+  cursor: pointer;
+  color: green;
+}
+
+#removeVideoPlayerButton a:hover {
+  color: white;
+}
+
+/* UI Rows */  
+
+#topElements {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+
+#topDisplayRow01, #topDisplayRow02 {  
+  padding: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+
+#topDisplayRow02 a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+#topDisplayRow02 a:hover {
+  color: green;
+}
+
+/* Captions */
+#performanceSelect{
+  width: 75%;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  font-size:0.8em;
+  color: white;
+}
+
+#performanceSelect a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#performanceSelect span {
+  position: relative;
+  top: 20px;
+}
+
+#logoContainer {
+  width: 25%;
+  padding-left: 0%;
+  font-family: 'Fruktur', cursive;
+  font-size:2em;
+  font-weight: 200;
+  transform: skew(25deg);
+  color: red;
+}
+
+#logoContainer img {
+  width: 100px;
+  height: 100px;
+  margin-left: 25%;
+  display: block;
+}
+
+#logoContainer a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#logoContainer a:hover {
+  color: white;
+}
+
+#desktopVRInfo{
+    display: none;
+  }
+
+/* Visibility controls */
+
+
+.hideAtStart {
+  visibility: hidden;
+}
+
+.reveal {
+  visibility: visible;
+}
+
+
+/*Responsive Media*/
+/*Mobile*/
+@media screen and (max-width: 800px) 
+{
+
+#embeddedScene {
+  visibility: hidden;
+  display: none;
+  width: 100%;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin: auto;
+  height: 0px; 
+}
+
+#aframeScene {
+  z-index: -2;
+}
+
+a-scene {
+  height: 400px;
+  width: 100%;
+  display: none;
+}
+
+#cellphoneHeader{
+  display: block;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: -5%;
+  padding-left: 0%;
+  font-size:1.5em;
+  color: green;
+  display: none;
+}
+
+#cellphoneHeader a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#cellphoneHeader a:hover {
+  color: white;
+}  
+  
+#video {
+  z-index: 2;
+  margin-top:0px;
+  display: block;
+  background: black;
+  width: 320px;
+  height: 400px;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin: auto;
+  overflow: auto;
+  /*
+  position: absolute;
+  z-index: 1;
+  top: 1.75%;
+  left: 10%;
+  margin-left: 0px;
+  width: 600px;
+  */
+}
+
+.videoContainer iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  margin-top: 0%;
+  margin-bottom: 0px;
+  background: black;
+}
+
+.videoContainer p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  margin-top: 1%;
+  margin-bottom: 50px;
+}
+
+#removeVideoPlayerButton {
+  display: none;
+  }
+
+#topElements {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 0px;
+}
+  
+#logoContainer {
+  display: block;
+  margin-left: 5%;
+  margin-right: auto;
+  width: 100%;
+  font-size:1.2em;
+  color: red;
+}
+  
+#performanceSelect{
+  width: 100%;
+  padding: 0 20px 0 20px;
+  margin: 10% 0 0 0;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+  
+  #desktopVRInfo{
+    display: block;
+  }
+  
+}

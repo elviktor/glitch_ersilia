@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>wutougui</title>
+    <meta name="description" content="wutougui">
+    <script src="lib/Aframe.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> 
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="lib/ImprovedNoise.js"></script>
+    <script src="lib/Require.js"></script>
+    <script src="components/mountain.js"></script>
+    <script src="components/mountainwire.js"></script>
+    <script src="components/box.js"></script>
+    <script src="components/builder01.js"></script>
+    <script src="components/builder02.js"></script>
+    <script src="components/builder03.js"></script>
+    <script src="components/randomcolor.js"></script>
+    <script src="components/follow.js"></script>
+    <script src="shaders/grid-glitch.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Fruktur|Open+Sans&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    
+    <div id="embeddedScene">
+      <a-scene id="aframeScene" embedded fog="type: linear; color: pink; near: 1; far: 2000">
+    
+        <a-assets>
+          <a-asset-item id="devil-obj" src="https://cdn.glitch.com/f217ced3-2e0a-4f98-9bff-96be8b691c3f%2FDevil02.obj?1549600744924"></a-asset-item>
+          <a-asset-item id="devil-mtl" src="https://cdn.glitch.com/f217ced3-2e0a-4f98-9bff-96be8b691c3f%2FDevil02.obj.mtl?1549600744203"></a-asset-item>
+        </a-assets>
+
+          <!-- Sky color -->
+        <a-sky color="#0000ff"></a-sky>
+        
+        <!-- Camera and cursor -->
+        <a-entity id="camera" camera look-controls>
+          <a-cursor id="cursor"
+            scale="1 1 1"
+            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 3 3 3; dur: 200"
+            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 200"
+            event-set__1="_event: mouseenter; color: green"
+            event-set__2="_event: mouseleave; color: black"
+            fuse="true"
+            raycaster="objects: .link">
+          </a-cursor>
+        </a-entity>  
+
+          <a-mountain color="pink" shadowcolor="yellow" position="0 -100 0">
+            <a-animation attribute="rotation"
+                         dur="60000"
+                         from="0 0 0"
+                         to="0 360 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>
+          </a-mountain>  
+        
+        
+        
+        <a-entity id="canvas01"
+                  position="0 -5 -5"
+                  builder03="host: #canvas01;
+                             label: first;
+                             number: 8; 
+                             algoType: 1; 
+                             color: 1;
+                             height: 0.05;
+                             width: 0.01;
+                             depth: 0.01;
+                             xSpacing: 1;
+                             ySpacing: 1;">
+          
+          <a-animation attribute="rotation"
+                         dur="15000"
+                         from="0 0 0"
+                         to="0 360 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>          
+        </a-entity>
+        <a-entity id="boxes02"
+                  position="-5 -5 -5"
+                  builder03="host: #boxes02;
+                             label: first;
+                             number: 8; 
+                             algoType: 1; 
+                             color: 3;
+                             height: 0.05;
+                             width: 0.01;
+                             depth: 0.01;
+                             xSpacing: 1;
+                             ySpacing: 1;">
+          
+          <a-animation attribute="rotation"
+                         dur="15000"
+                         from="0 360 0"
+                         to="0 0 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>          
+        </a-entity>
+        <a-entity id="canvas02"
+                  position="0 -5 0"
+                  builder03="host: #canvas02;
+                             label: second;
+                             number: 8; 
+                             algoType: 4; 
+                             color:2;
+                             height: 0.05;
+                             width: 0.01;
+                             xSpacing: 1;
+                             ySpacing: 5;">
+          
+          <a-animation attribute="rotation"
+                         dur="20000"
+                         from="0 0 0"
+                         to="0 360 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>
+        </a-entity>
+        <a-entity id="follow01"
+                  position="-2 0 -5"
+                  builder03="host: #follow01;
+                             label: third;
+                             target: #devil01;
+                             number: 8; 
+                             algoType: 3; 
+                             color: 4;
+                             height: 0.05;
+                             width: 0.01;
+                             depth: 0.05;
+                             xSpacing: 0.1;
+                             ySpacing: 0.1;">
+          <a-animation attribute="rotation"
+                         dur="15000"
+                         from="0 0 0"
+                         to="0 360 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>
+        </a-entity>
+        <a-entity id="follow02"
+                  position="5 0 -5"
+                  builder03="host: #follow02;
+                             label: third;
+                             target: #devil01;
+                             number: 8; 
+                             algoType: 6; 
+                             color: 2;
+                             height: 0.05;
+                             width: 0.01;
+                             depth: 0.05;
+                             xSpacing: 0.1;
+                             ySpacing: 0.1;">
+          <a-animation attribute="rotation"
+                         dur="15000"
+                         from="0 0 0"
+                         to="0 360 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>
+        </a-entity>
+        <a-entity id="torus02"
+                  position="0 -5 0"
+                  builder03="host: #torus02;
+                             label: torus_2;
+                             number: 8; 
+                             algoType: 5; 
+                             color:2;
+                             height: 0.05;
+                             width: 0.01;
+                             xSpacing: 1;
+                             ySpacing: 1;">
+          
+          <a-animation attribute="rotation"
+                         dur="20000"
+                         from="0 360 0"
+                         to="0 0 0"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>
+        </a-entity>
+        
+        
+        
+        <a-entity id="devil-container01" position="0 -1 -5">
+            <a-animation attribute="rotation"
+                         dur="15000"
+                         from="0 5 0"
+                         to="0 -5 0"
+                         direction="alternate"
+                         easing="linear"
+                         repeat="indefinite">
+            </a-animation>
+            <a-animation id="devil-scale" attribute="scale"
+                         dur="5000"
+                         from="1 1 1"
+                         to="1.5 1.5 1.5"
+                         loop="0"
+                         easing="linear"
+                         direction="alternate"
+                         begin="startAnimation"
+                         autoplay="false">
+            </a-animation>  
+            <a-entity id="devil01" class="link" obj-model="obj: #devil-obj; mtl: #devil-mtl" scale="1 1 1" rotation="0 0 0" onclick="triggerAnimation('#devil-scale')"></a-entity>
+          </a-entity>
+
+      </a-scene>
+    </div>
+    <script>
+          function triggerAnimation(target) {
+            var targetElement = document.querySelector(target);
+            targetElement.emit('startAnimation');
+            console.log("clicked")
+           }
+      
+          function triggerRotation(target, durLength) {
+            var targetElement = document.querySelector(target);
+            targetElement.emit('startAnimation');
+            targetElement.setAttribute("dur", durLength);
+           }
+    </script>
+  </body>
+</html>
