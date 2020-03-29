@@ -12,9 +12,7 @@
     <script src="components/mountain.js"></script>
     <script src="components/mountainwire.js"></script>
     <script src="components/box.js"></script>
-    <script src="components/builder01.js"></script>
-    <script src="components/builder02.js"></script>
-    <script src="components/builder03.js"></script>
+    <script src="components/algobuilder01.js"></script>
     <script src="components/randomcolor.js"></script>
     <script src="components/follow.js"></script>
     <script src="shaders/grid-glitch.js"></script>
@@ -60,41 +58,13 @@
             </a-animation>
           </a-mountain>  
         
-        
-        
-        <a-entity id="canvas01"
-                  position="0 -5 -5"
-                  builder03="host: #canvas01;
-                             label: first;
-                             number: 8; 
-                             algoType: 1; 
-                             color: 1;
-                             height: 0.05;
-                             width: 0.01;
-                             depth: 0.01;
-                             xSpacing: 1;
-                             ySpacing: 1;">
-          
-          <a-animation attribute="rotation"
-                         dur="15000"
-                         from="0 0 0"
-                         to="0 360 0"
-                         easing="linear"
-                         repeat="indefinite">
-            </a-animation>          
-        </a-entity>
         <a-entity id="boxes02"
                   position="-5 -5 -5"
-                  builder03="host: #boxes02;
+                  algobuilder02="host: #boxes02;
                              label: first;
                              number: 8; 
                              algoType: 1; 
-                             color: 3;
-                             height: 0.05;
-                             width: 0.01;
-                             depth: 0.01;
-                             xSpacing: 1;
-                             ySpacing: 1;">
+                             url: http://rmgilbertcivilrightsmuseum.com">
           
           <a-animation attribute="rotation"
                          dur="15000"
@@ -104,112 +74,6 @@
                          repeat="indefinite">
             </a-animation>          
         </a-entity>
-        <a-entity id="canvas02"
-                  position="0 -5 0"
-                  builder03="host: #canvas02;
-                             label: second;
-                             number: 8; 
-                             algoType: 4; 
-                             color:2;
-                             height: 0.05;
-                             width: 0.01;
-                             xSpacing: 1;
-                             ySpacing: 5;">
-          
-          <a-animation attribute="rotation"
-                         dur="20000"
-                         from="0 0 0"
-                         to="0 360 0"
-                         easing="linear"
-                         repeat="indefinite">
-            </a-animation>
-        </a-entity>
-        <a-entity id="follow01"
-                  position="-2 0 -5"
-                  builder03="host: #follow01;
-                             label: third;
-                             target: #devil01;
-                             number: 8; 
-                             algoType: 3; 
-                             color: 4;
-                             height: 0.05;
-                             width: 0.01;
-                             depth: 0.05;
-                             xSpacing: 0.1;
-                             ySpacing: 0.1;">
-          <a-animation attribute="rotation"
-                         dur="15000"
-                         from="0 0 0"
-                         to="0 360 0"
-                         easing="linear"
-                         repeat="indefinite">
-            </a-animation>
-        </a-entity>
-        <a-entity id="follow02"
-                  position="5 0 -5"
-                  builder03="host: #follow02;
-                             label: third;
-                             target: #devil01;
-                             number: 8; 
-                             algoType: 6; 
-                             color: 2;
-                             height: 0.05;
-                             width: 0.01;
-                             depth: 0.05;
-                             xSpacing: 0.1;
-                             ySpacing: 0.1;">
-          <a-animation attribute="rotation"
-                         dur="15000"
-                         from="0 0 0"
-                         to="0 360 0"
-                         easing="linear"
-                         repeat="indefinite">
-            </a-animation>
-        </a-entity>
-        <a-entity id="torus02"
-                  position="0 -5 0"
-                  builder03="host: #torus02;
-                             label: torus_2;
-                             number: 8; 
-                             algoType: 5; 
-                             color:2;
-                             height: 0.05;
-                             width: 0.01;
-                             xSpacing: 1;
-                             ySpacing: 1;">
-          
-          <a-animation attribute="rotation"
-                         dur="20000"
-                         from="0 360 0"
-                         to="0 0 0"
-                         easing="linear"
-                         repeat="indefinite">
-            </a-animation>
-        </a-entity>
-        
-        
-        
-        <a-entity id="devil-container01" position="0 -1 -5">
-            <a-animation attribute="rotation"
-                         dur="15000"
-                         from="0 5 0"
-                         to="0 -5 0"
-                         direction="alternate"
-                         easing="linear"
-                         repeat="indefinite">
-            </a-animation>
-            <a-animation id="devil-scale" attribute="scale"
-                         dur="5000"
-                         from="1 1 1"
-                         to="1.5 1.5 1.5"
-                         loop="0"
-                         easing="linear"
-                         direction="alternate"
-                         begin="startAnimation"
-                         autoplay="false">
-            </a-animation>  
-            <a-entity id="devil01" class="link" obj-model="obj: #devil-obj; mtl: #devil-mtl" scale="1 1 1" rotation="0 0 0" onclick="triggerAnimation('#devil-scale')"></a-entity>
-          </a-entity>
 
       </a-scene>
     </div>
